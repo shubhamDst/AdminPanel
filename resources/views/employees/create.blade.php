@@ -43,25 +43,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>First Name<span style="color:red">*</span>:</strong>
-                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control" placeholder="First Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Last Name<span style="color:red">*</span>:</strong>
-                <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                <input type="text" name="last_name" value="{{ old('last_name') }}" class="form-control" placeholder="Last Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email<span style="color:red">*</span>:</strong>
-                <input type="text" name="email" class="form-control" placeholder="Email">
+                <input type="text" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Phone<span style="color:red">*</span>:</strong>
-                <input type="text" name="phone" class="form-control" placeholder="Phone">
+                <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" placeholder="Phone">
             </div>
         </div>
         
