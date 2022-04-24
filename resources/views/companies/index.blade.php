@@ -13,7 +13,9 @@
             </div>
         </div>
     </div>
-   
+    <div>
+        <a href="{{ URL::to('/') }}/sample_csv.csv"> Sample CSV file to import</a>
+    </div>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>

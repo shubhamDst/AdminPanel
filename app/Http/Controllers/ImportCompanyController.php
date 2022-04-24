@@ -13,12 +13,15 @@ class ImportCompanyController extends Controller
     }
 
     public function importData(Request $request){
+        $request->validate([
+            'fileName' => 'required',
+        ]);
         $file = $request->file('fileName');
         $fileName = $file->getClientOriginalName();
         $renamedFileName = Date('Ymdhis').'_'.$fileName; //Renamed file name
               
         $extension = strtolower($file->getClientOriginalExtension());
-        if (in_array($extension, array('csv','xls')))
+        if (in_array($extension, array('csv')))
         { 
             if(!File::exists(storage_path().'/import-company')) {
                 File::makeDirectory(storage_path().'/import-company', 0777, true, true);
@@ -39,6 +42,9 @@ class ImportCompanyController extends Controller
                 return redirect()->route('companies.index')
                         ->with('error','Something went wrong.');
             }
+        }else{
+            return redirect()->route('import-company')
+                        ->with('error','Something went wrong.');
         }
     }
 

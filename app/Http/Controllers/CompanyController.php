@@ -16,9 +16,6 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::latest()->paginate(5);
-    
-        // return view('companies.index',compact('companies'))
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
         return view('companies.index',compact('companies'));
     }
 
@@ -49,7 +46,7 @@ class CompanyController extends Controller
         $imageName = time().'.'.$request->image->extension();  
         $request->merge(['logo' => $imageName]);
         $request->image->move(public_path('logos'), $imageName);
-        
+
         Company::create($request->all()); 
         return redirect()->route('companies.index')
                         ->with('success','Company created successfully.');
@@ -88,7 +85,6 @@ class CompanyController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:companies',
             'website' => 'required',
             'image' => 'mimes:jpeg,png,jpg|max:2048',
         ]);

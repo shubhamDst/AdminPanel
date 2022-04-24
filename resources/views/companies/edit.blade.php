@@ -37,7 +37,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Email:</strong>
-                    <input type="text" name="email" value="{{ $company->email }}" class="form-control" placeholder="Email">
+                    <input type="text" name="email" value="{{ $company->email }}" class="form-control" placeholder="Email" disabled>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -50,7 +50,9 @@
                 <div class="form-group">
                     <strong>Logo:</strong>
                     <div>
+                    @if($company->logo)
                         <img src="{{url('/logos/'.$company->logo)}}" alt="Image" width="200" height="200"/>
+                    @endif
                     </div>
                     <input type="file" name="image" class="form-control" value="{{ $company->logo }}">
                     <input type="hidden" name="logo_img" value="{{ $company->logo }}">

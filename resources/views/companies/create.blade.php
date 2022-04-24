@@ -30,19 +30,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name<span style="color:red">*</span>:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email<span style="color:red">*</span>:</strong>
-                <input type="text" name="email" class="form-control" placeholder="Email">
+                <input type="text" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Website<span style="color:red">*</span>:</strong>
-                <input type="text" name="website" class="form-control" placeholder="Website">
+                <input type="text" name="website" value="{{ old('website') }}" class="form-control" placeholder="Website">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -51,12 +51,6 @@
                 <input type="file" name="image" class="form-control">
             </div>
         </div>
-        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Detail:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
-            </div>
-        </div> -->
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
