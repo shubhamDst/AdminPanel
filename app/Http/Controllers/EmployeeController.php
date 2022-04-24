@@ -71,8 +71,6 @@ class EmployeeController extends Controller
     public function edit(Employee $employee)
     {
         $companies = Company::all();
-        //return view('employees.edit',compact('employee'));
-        //return $view->with(compact('employee', 'companies'));
         return view('employees.edit',compact(['employee', 'companies']));
     }
 

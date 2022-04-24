@@ -49,7 +49,7 @@ class CompanyController extends Controller
         $imageName = time().'.'.$request->image->extension();  
         $request->merge(['logo' => $imageName]);
         $request->image->move(public_path('logos'), $imageName);
-        //dd($request->all());
+        
         Company::create($request->all()); 
         return redirect()->route('companies.index')
                         ->with('success','Company created successfully.');
@@ -101,9 +101,7 @@ class CompanyController extends Controller
             }
         }
         
-
         $company->update($request->all());
-    
         return redirect()->route('companies.index')
                         ->with('success','Company updated successfully');
     }
@@ -116,10 +114,7 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //dd($company);
-        //dd($_REQUEST);
         $company->delete();
-    
         return redirect()->route('companies.index')
                         ->with('success','Company deleted successfully');
     }
